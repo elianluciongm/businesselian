@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
@@ -641,6 +642,74 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <!-- META PIXEL -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) :
+          n.queue.push(arguments)
+      };
+
+      if (!f._fbq) f._fbq = n;
+
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '914317990480956');
+    fbq('track', 'PageView');
+
+    document.addEventListener('click', function (event) {
+
+      const link = event.target.closest('a');
+
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+
+      if (!href) return;
+
+      if (
+        href.includes('wa.me/553195714063') ||
+        href.includes('api.whatsapp.com') ||
+        href.includes('whatsapp.com')
+      ) {
+
+        fbq('trackCustom', 'PossivelLead', {
+          origem: 'WhatsApp',
+          pagina: window.location.pathname
+        });
+
+      }
+
+    });
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=914317990480956&ev=PageView&noscript=1" alt="">
+  </noscript>
+  <!-- FIM META PIXEL -->
+
+</body>
+
+</html>
 </body>
 
 </html>
