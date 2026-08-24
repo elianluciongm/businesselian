@@ -1271,8 +1271,8 @@ button {
   }
 
   .hero-visual {
-    max-width: 590px;
-    margin: 30px auto 0;
+    max-width: 580px;
+    margin: -40px auto 0;
     width: 100%;
   }
 
@@ -1331,7 +1331,16 @@ button {
   }
 
   .hero {
-    padding: 102px 0 56px;
+    padding: 102px 0 0px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 110px 0 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
   }
 
   .hero-content h1 {
@@ -1650,3 +1659,129 @@ body {
   margin-left: 3px;
 }
 
+
+
+/* =========================================
+   AJUSTES — HERO CLARO + CTAs INTERMEDIÁRIOS
+   ========================================= */
+.hero.section-light {
+  background: var(--light);
+  color: var(--text);
+}
+
+.hero.section-light .eyebrow {
+  color: var(--green);
+}
+
+.hero.section-light .hero-content h1 {
+  color: var(--text);
+}
+
+.hero.section-light .hero-content h1 span {
+  color: var(--green);
+}
+
+.hero.section-light .hero-content>p {
+  color: #53615b;
+}
+
+.hero.section-light .btn-light {
+  background: var(--green);
+  color: var(--white);
+}
+
+.hero.section-light .btn-light:hover {
+  background: var(--green-deep);
+}
+
+.hero.section-light .btn-ghost {
+  border-color: rgba(53, 86, 74, .22);
+  color: var(--green-deep);
+  background: rgba(255, 255, 255, .28);
+}
+
+.hero.section-light .btn-ghost:hover {
+  background: rgba(255, 255, 255, .62);
+  border-color: rgba(53, 86, 74, .34);
+}
+
+.hero.section-light .avatars span {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--light);
+}
+
+.hero.section-light .stars {
+  color: var(--green);
+}
+
+.hero.section-light .hero-proof small {
+  color: var(--muted);
+}
+
+.hero.section-light .orb-one,
+.hero.section-light .orb-two {
+  border-color: rgba(53, 86, 74, .11);
+}
+
+/* Navbar legível sobre o hero claro; ao rolar mantém o visual escuro original. */
+.navbar:not(.scrolled) .brand,
+.navbar:not(.scrolled) .nav-links a,
+.navbar:not(.scrolled) .menu-toggle {
+  color: var(--green-deep);
+}
+
+.navbar:not(.scrolled) .brand-mark {
+  border-color: rgba(53, 86, 74, .28);
+}
+
+.navbar:not(.scrolled) .nav-links a::after {
+  background: var(--green);
+}
+
+.navbar:not(.scrolled) .nav-cta {
+  background: var(--green);
+  color: var(--white);
+}
+
+.navbar:not(.scrolled) .nav-cta:hover {
+  background: var(--green-deep);
+}
+
+/* Mantém o menu mobile com contraste quando ele é aberto. */
+@media (max-width: 820px) {
+  .navbar:not(.scrolled) .nav-links.open a {
+    color: rgba(255, 255, 255, .82);
+  }
+
+  .navbar:not(.scrolled) .nav-links.open a::after {
+    background: #fff;
+  }
+}
+
+.cta-section-inline {
+  padding: 42px 0;
+}
+
+.cta-section-inline+.section-light {
+  border-top: 1px solid rgba(53, 86, 74, .08);
+}
+
+@media (max-width: 600px) {
+  .cta-section-inline {
+    padding: 26px 0;
+  }
+}
+
+/* REMOVE O ESPAÇO GRANDE ENTRE NAVBAR E HERO */
+@media (min-width: 821px) {
+  .hero {
+    min-height: auto !important;
+    padding: 30px 0 60px !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-grid {
+    align-items: center;
+  }
+}
